@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../..//muduo/base/Timestamp.h
+muduo/base/Types.h
+../../muduo/base/muduo/base/Types.h
+muduo/base/copyable.h
+../../muduo/base/muduo/base/copyable.h
+boost/operators.hpp
+-
+
+../..//muduo/base/Types.h
+string.h
+-
+
+../..//muduo/base/copyable.h
+
+/root/muduo_server_learn-master/src/mmuduo/muduo/base/Timestamp.cc
+muduo/base/Timestamp.h
+/root/muduo_server_learn-master/src/mmuduo/muduo/base/muduo/base/Timestamp.h
+sys/time.h
+-
+inttypes.h
+-
+
