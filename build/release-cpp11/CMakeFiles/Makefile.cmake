@@ -12,6 +12,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.11.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.11.3/CMakeSystem.cmake"
   "../../muduo/base/CMakeLists.txt"
+  "../../muduo/base/tests/CMakeLists.txt"
+  "../../tests/CMakeLists.txt"
   "/usr/local/share/cmake-3.11/Modules/CMakeCInformation.cmake"
   "/usr/local/share/cmake-3.11/Modules/CMakeCXXInformation.cmake"
   "/usr/local/share/cmake-3.11/Modules/CMakeCommonLanguageInclude.cmake"
@@ -52,10 +54,14 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "muduo/base/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "muduo/base/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "muduo/base/CMakeFiles/muduo_base.dir/DependInfo.cmake"
+  "muduo/base/tests/CMakeFiles/timestamp_unittest.dir/DependInfo.cmake"
+  "muduo/base/tests/CMakeFiles/atomic_unittest.dir/DependInfo.cmake"
+  "tests/CMakeFiles/bsa.dir/DependInfo.cmake"
   )

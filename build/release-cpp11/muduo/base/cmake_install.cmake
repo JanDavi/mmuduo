@@ -41,3 +41,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/root/muduo_server_learn-master/src/mmuduo/build/release-cpp11/lib/libmuduo_base.a")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/root/muduo_server_learn-master/src/mmuduo/build/release-cpp11/muduo/base/tests/cmake_install.cmake")
+
+endif()
+

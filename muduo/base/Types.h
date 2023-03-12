@@ -2,24 +2,25 @@
 #define MUDUO_BASE_TYPES_H
 
 #include <string.h>     // memset
+#include <string>
 
 namespace muduo
 {
 
-void memZero(void* p, size_t n)
+inline void memZero(void* p, size_t n)
 {
     memset(p, 0, n);
 }
 
 // a safe version of static_cast and const_cast
 template<typename To, typename From>
-To implicit_cast(From const &f)
+inline To implicit_cast(From const &f)
 {
     return f;
 }
 
 template<typename To, typename From>
-To down_cast(From* f)
+inline To down_cast(From* f)
 {
     return static_cast<To>(f);
 }

@@ -7,3 +7,6 @@ target_link_libraries(muduo_base pthread rt) # muduo_base这个库需要连接�
 
 install(TARGETS muduo_base DESTINATION lib)
 
+if(MUDUO_BUILD_EXAMPLES)
+  add_subdirectory(tests)
+endif()

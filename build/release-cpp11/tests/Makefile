@@ -56,6 +56,28 @@ CMAKE_BINARY_DIR = /root/muduo_server_learn-master/src/mmuduo/build/release-cpp1
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -113,28 +135,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11 && $(CMAKE_COMMAND) -E cmake_progress_start /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11/CMakeFiles /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11/tests/CMakeFiles/progress.marks
@@ -167,19 +167,65 @@ depend:
 	cd /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+tests/CMakeFiles/bsa.dir/rule:
+	cd /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11 && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/bsa.dir/rule
+.PHONY : tests/CMakeFiles/bsa.dir/rule
+
+# Convenience name for target.
+bsa: tests/CMakeFiles/bsa.dir/rule
+
+.PHONY : bsa
+
+# fast build rule for target.
+bsa/fast:
+	cd /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11 && $(MAKE) -f tests/CMakeFiles/bsa.dir/build.make tests/CMakeFiles/bsa.dir/build
+.PHONY : bsa/fast
+
+bsa.o: bsa.cc.o
+
+.PHONY : bsa.o
+
+# target to build an object file
+bsa.cc.o:
+	cd /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11 && $(MAKE) -f tests/CMakeFiles/bsa.dir/build.make tests/CMakeFiles/bsa.dir/bsa.cc.o
+.PHONY : bsa.cc.o
+
+bsa.i: bsa.cc.i
+
+.PHONY : bsa.i
+
+# target to preprocess a source file
+bsa.cc.i:
+	cd /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11 && $(MAKE) -f tests/CMakeFiles/bsa.dir/build.make tests/CMakeFiles/bsa.dir/bsa.cc.i
+.PHONY : bsa.cc.i
+
+bsa.s: bsa.cc.s
+
+.PHONY : bsa.s
+
+# target to generate assembly for a file
+bsa.cc.s:
+	cd /root/muduo_server_learn-master/src/mmuduo/build/release-cpp11 && $(MAKE) -f tests/CMakeFiles/bsa.dir/build.make tests/CMakeFiles/bsa.dir/bsa.cc.s
+.PHONY : bsa.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... bsa"
 	@echo "... test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... install"
-	@echo "... list_install_components"
+	@echo "... bsa.o"
+	@echo "... bsa.i"
+	@echo "... bsa.s"
 .PHONY : help
 
 

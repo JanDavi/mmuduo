@@ -1,8 +1,8 @@
 #ifndef MUDUO_BASE_TIMESTAMP_H
 #define MUDUO_BASE_TIMESTAMP_H
 
-#include "muduo/base/Types.h"
 #include "muduo/base/copyable.h"
+#include "muduo/base/Types.h"
 
 #include <boost/operators.hpp>
 
@@ -50,24 +50,24 @@ private:
     int64_t microSecondsSinceEpoch_;
 };
 
-bool operator<(Timestamp lts, Timestamp rts)
+inline bool operator<(Timestamp lts, Timestamp rts)
 {
     return lts.microSecondsSinceEpoch() < rts.microSecondsSinceEpoch();
 }
 
-bool operator==(Timestamp lts, Timestamp rts)
+inline bool operator==(Timestamp lts, Timestamp rts)
 {
     return lts.microSecondsSinceEpoch() == rts.microSecondsSinceEpoch();
 }
 
 // the difference between hight and low, uint: seoncd
-double timeDifference(Timestamp high, Timestamp low)
+inline double timeDifference(Timestamp high, Timestamp low)
 {
     int64_t diff = high.microSecondsSinceEpoch() - low.microSecondsSinceEpoch();
     return static_cast<double>(diff) / Timestamp::kMicroSecondsPerSecond;
 }
 
-Timestamp addTime(Timestamp ts, double seconds)
+inline Timestamp addTime(Timestamp ts, double seconds)
 {
     return Timestamp(ts.microSecondsSinceEpoch() + static_cast<int64_t>(seconds * Timestamp::kMicroSecondsPerSecond));
 }

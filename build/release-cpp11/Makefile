@@ -180,6 +180,45 @@ muduo_base/fast:
 	$(MAKE) -f muduo/base/CMakeFiles/muduo_base.dir/build.make muduo/base/CMakeFiles/muduo_base.dir/build
 .PHONY : muduo_base/fast
 
+#=============================================================================
+# Target rules for targets named timestamp_unittest
+
+# Build rule for target.
+timestamp_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 timestamp_unittest
+.PHONY : timestamp_unittest
+
+# fast build rule for target.
+timestamp_unittest/fast:
+	$(MAKE) -f muduo/base/tests/CMakeFiles/timestamp_unittest.dir/build.make muduo/base/tests/CMakeFiles/timestamp_unittest.dir/build
+.PHONY : timestamp_unittest/fast
+
+#=============================================================================
+# Target rules for targets named atomic_unittest
+
+# Build rule for target.
+atomic_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 atomic_unittest
+.PHONY : atomic_unittest
+
+# fast build rule for target.
+atomic_unittest/fast:
+	$(MAKE) -f muduo/base/tests/CMakeFiles/atomic_unittest.dir/build.make muduo/base/tests/CMakeFiles/atomic_unittest.dir/build
+.PHONY : atomic_unittest/fast
+
+#=============================================================================
+# Target rules for targets named bsa
+
+# Build rule for target.
+bsa: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bsa
+.PHONY : bsa
+
+# fast build rule for target.
+bsa/fast:
+	$(MAKE) -f tests/CMakeFiles/bsa.dir/build.make tests/CMakeFiles/bsa.dir/build
+.PHONY : bsa/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -194,6 +233,9 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... muduo_base"
+	@echo "... timestamp_unittest"
+	@echo "... atomic_unittest"
+	@echo "... bsa"
 .PHONY : help
 
 
